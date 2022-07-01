@@ -85,7 +85,7 @@
         <li>Simply copy war file to the right path within the container</li>
     </ul>
     <h3>Yaml files</h3>
-    <p>
+    <pre>
     apiVersion: apps/v1
     kind: Deployment                                   # Type of file
     metadata:                           
@@ -115,7 +115,7 @@
                     - containerPort: 80
                 restartPolicy: Always                 # If a container doesn't start then restart
                 terminationGracePeriodSeconds: 30     # When a container is stopped it will be given 30 secs to clear all its work
-    </p>
+    </pre>
     <br>
     <p>
     apiVersion: v1
