@@ -1,0 +1,5 @@
+image: gauraangs/micro1:1.0.0 
+port: 8080
+serviceType: LoadBalancer
+replicas: 2
+name: service1

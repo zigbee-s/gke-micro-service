@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.name }}
+  name: {{ .Values.name }}
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: {{ .Values.replicas }}
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+        - image: {{ .Values.image }}
+          imagePullPolicy: IfNotPresent
+          name: {{ .Values.name }}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
