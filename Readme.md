@@ -9,7 +9,7 @@ This project demonstrates following concepts:
     <li>The deployment will be done using helm</li>
 </ul>
 
-<h3>Link to step wise implementation:  
+<h3>Link to step wise implementation:  <link>https://docs.google.com/document/d/1Se7oRsR-ZcMXefU6vqFt-WXo3KglDhFj0uyVLBrrCbk/edit?usp=sharing</link>
 <hr>
 <hr>
 <hr>
